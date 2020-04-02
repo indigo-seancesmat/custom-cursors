@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import CustomCursor from "@/components/CustomCursor";
+import CustomCursor from "@/components/CSSCustomCursor";
 export default {
   name: "App",
   components: {
