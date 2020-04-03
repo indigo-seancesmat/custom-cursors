@@ -144,6 +144,11 @@ export default {
         item.addEventListener("mouseenter", handleMouseEnter);
         item.addEventListener("mouseleave", handleMouseLeave);
       });
+      const wavyLinkItems = document.querySelectorAll(".wavy-link");
+      wavyLinkItems.forEach(item => {
+        item.addEventListener("mouseenter", handleMouseEnter);
+        item.addEventListener("mouseleave", handleMouseLeave);
+      });
     },
     setUpMagneticNoise() {
       // the draw loop of Paper.js

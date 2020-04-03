@@ -1,23 +1,32 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Glitch from "../views/Glitch.vue";
+import GlitchSticky from "../views/GlitchSticky.vue";
+import Attach from "../views/Attach.vue";
+import CanvasWavy from "../views/CanvasWavy.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Glitch",
+    component: Glitch
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "/glitch-sticky",
+    name: "GlitchSticky",
+    component: GlitchSticky
+  },
+  {
+    path: "/attach",
+    name: "Attach",
+    component: Attach
+  },
+  {
+    path: "/canvas-wavy",
+    name: "CanvasWavy",
+    component: CanvasWavy
   }
 ];
 

@@ -35,7 +35,7 @@
 <script>
 import { gsap } from "gsap";
 export default {
-  name: "CustomCursor",
+  name: "AttachCursor",
   data() {
     return {
       isStuck: false,
@@ -113,6 +113,8 @@ export default {
         );
         this.isStuck = true;
 
+        this.tl.kill();
+
         gsap.to(this.trailingCursorStyles, {
           width: this.navItemBox.width,
           height: this.navItemBox.height,
@@ -126,16 +128,25 @@ export default {
         this.isStuck = false;
         setTimeout(() => {
           if (!this.isStuck) {
-            gsap.to(this.trailingCursorStyles, {
-              width: 30,
-              height: 30,
-              duration: this.animationSpeed
-            });
-            gsap.to(this.trailingCursorStyles, {
-              radius: 100,
-              duration: 0.1,
-              delay: 0.15
-            });
+            this.tl = gsap.timeline();
+            this.tl.to(
+              this.trailingCursorStyles,
+              {
+                width: 30,
+                height: 30,
+                duration: this.animationSpeed
+              },
+              0
+            );
+            this.tl.to(
+              this.trailingCursorStyles,
+              {
+                radius: 100,
+                duration: 0.1,
+                delay: 0.15
+              },
+              0
+            );
           }
         }, 50);
       };
